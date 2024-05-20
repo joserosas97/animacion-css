@@ -1,0 +1,144 @@
+ *{
+    font-family: "Poetsen One", sans-serif;
+ }
+ header{
+    grid-area: header;
+    background-color: #a3bd44;
+    text-align: center;
+    color: white;
+    
+    
+}
+
+main{
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+section {
+    grid-area: section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1cfcf;
+    padding-bottom: 10px;
+    
+}
+
+footer{
+    grid-area: footer;
+    text-align: center;
+    background-color: #a3bd44;
+    padding-top: 10px;
+    color: white;
+}
+.menu{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;  
+    
+}
+.menu p{
+    color: white;
+    font-size: 17px; 
+    transition: font-size 2s ease-in;
+}
+.menu p:hover{
+    font-size: 25px;
+    color: black;
+
+}
+   
+
+@media (max-width: 575px) {
+    .grid-main {
+        grid-template-columns: 1fr; 
+        
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+         "header"
+         "section"
+         "main"
+         "footer";
+    }
+    .filtro select {
+        width: 70px;
+    }
+    .productos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        gap: 30px;
+       }
+       .filtro{
+        gap: 10px;
+       }
+       img {
+        transform: rotatey(0deg);
+        transition: transform 2s;
+    }
+    img:hover{
+        transform: rotatey(360deg);
+    }
+
+    }
+    .productos div {
+        flex: 1 1 calc(50% - 20px); 
+}
+
+
+@media (min-width: 576px) {
+    .grid-main {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    }
+    .grid-container{
+        display: grid;
+        grid-template-areas:
+        "header header header header"
+        "section main main main"
+        "section main main main"
+        "footer footer footer footer";
+        grid-template-columns: 20%, auto;
+        gap: 0px;
+        } 
+        .grid-main {
+            display: grid;
+            grid-template-columns: repeat(4, auto-fit, minmax(250px, 1fr));
+            grid-template-rows: repeat(4, 1fr);
+            align-content: center;
+           }
+           .productos{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            padding-top: 30px;
+           }
+        .productos div {
+               flex: 1 1 calc(25% - 20px); 
+               margin-bottom: 20px;
+           }
+           .filtro select{
+            justify-content: center;
+        }
+        .filtro {
+            display: flex;
+            flex-direction: column;
+        }
+        img {
+            transform: rotatey(0deg);
+            transition: transform 2s;
+        }
+        img:hover{
+            transform: rotatey(360deg);
+        }
+            
+}
